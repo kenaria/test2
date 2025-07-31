@@ -99,8 +99,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-  max-width: 1170px;
-  padding: 0;
+  max-width: 1230px;
+  padding: 0 30px;
   margin: 0 auto;
 }
 
@@ -129,7 +129,6 @@ body::-webkit-scrollbar-thumb {
   font-size: 13px;
   font-weight: 400;
   line-height: 23px;
-  margin: 10px 10px 0;
   overflow: hidden;
   padding: 10px 30px;
   position: relative;
@@ -168,52 +167,6 @@ body::-webkit-scrollbar-thumb {
   top: -28px;
 }
 
-.header {
-  padding-top: 6px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-.header__wrapper--top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header__menu {
-  display: flex;
-  gap: 2rem;
-}
-.header__li {
-  display: flex;
-  align-items: center;
-  gap: 1.5px;
-}
-.header__li-icon {
-  width: 26px;
-  height: 24px;
-}
-.header__link, .header__list-link {
-  color: #484848;
-  font-family: "Arimo", sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  transition: 0.3s linear;
-}
-.header__link:hover, .header__list-link:hover {
-  color: #ff4530;
-}
-.header__list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 0;
-  gap: 20px;
-}
-.header__list .header__list-link {
-  text-transform: uppercase;
-}
-.header__list-item {
-  padding: 0 10px;
-}
-
 .mainscreen {
   padding: 50px 0;
   background-color: #fafafa;
@@ -241,11 +194,12 @@ body::-webkit-scrollbar-thumb {
 }
 .mainscreen__stars {
   display: flex;
+  justify-content: space-between;
   gap: 5px;
   width: 80%;
 }
 .mainscreen__stars img {
-  width: 1.146vw;
+  width: 20px;
 }
 .mainscreen__rating, .mainscreen__item-text {
   font-size: 20px;
@@ -266,7 +220,7 @@ body::-webkit-scrollbar-thumb {
   gap: 15px;
 }
 .mainscreen__item {
-  width: 14.021vw;
+  width: 270px;
 }
 .mainscreen__subitem {
   display: flex;
@@ -284,4 +238,128 @@ body::-webkit-scrollbar-thumb {
 }
 .mainscreen__subitem-link:hover {
   color: #ff4530;
+}
+.mainscreen__card {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.mainscreen__card--left {
+  padding: 16px 24px;
+  background: #ebfff1;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainscreen__card--right {
+  width: 70%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainscreen__card-title {
+  display: flex;
+  gap: 12px;
+}
+.mainscreen__card-title h3 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #25b868;
+}
+.mainscreen__card-title svg {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.mainscreen__card-icon:hover .mainscreen__card-info {
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+}
+.mainscreen__number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.mainscreen__number--main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainscreen__number-value, .mainscreen__number-text {
+  font-weight: 600;
+}
+.mainscreen__number-value {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+}
+.mainscreen__number-text {
+  color: #25b868;
+  font-size: 20px;
+}
+.mainscreen .btn-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.mainscreen .btn-block .btn:first-child {
+  background: #ff4530;
+}
+.mainscreen .btn-block .btn:last-child {
+  background: #3dace1;
+}
+.mainscreen__card-info {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 50%;
+  padding: 24px;
+  color: #fff;
+  background: rgb(61, 172, 225);
+  font-size: 18px;
+  line-height: 1.5em;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transition: 0.3s linear;
+}
+
+@media (max-width: 1200px) {
+  .mainscreen__info {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 890px) {
+  .mainscreen__content {
+    flex-direction: column;
+  }
+  .mainscreen__content--left, .mainscreen__content--right {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .mainscreen__info {
+    justify-content: center;
+  }
+  .mainscreen__card {
+    flex-direction: column;
+  }
+  .mainscreen__card--left, .mainscreen__card--right {
+    width: 100%;
+  }
+  .mainscreen__card-info {
+    top: 51%;
+    width: 95%;
+  }
+  .mainscreen__item {
+    width: 100%;
+  }
 }
